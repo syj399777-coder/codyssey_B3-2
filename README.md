@@ -55,24 +55,34 @@ Git 변경 사항(`git status`, `git diff`)을 분석하여 컨벤션에 맞는 
 ### [항목 1] 동작 검증 및 기능 테스트 결과
 
 1. **커밋 메시지 및 PR 제목/본문 터미널 출력**
-   - `python main.py commit` 실행 시, 변경 사항 요약 기반의 커밋 메시지(제목 1줄 + 불릿 본문)가 터미널에 명확한 구획선과 함께 출력됩니다.
+   - `ppython main.py commit` 실행, 변경 사항 요약 기반의 커밋 메시지(제목 1줄 + 불릿 본문)가 터미널에 명확한 구획선과 함께 출력됩니다.
    - `python main.py pr` 실행 시, PR 제목 1줄과 `Why/What/How to Test` 템플릿이 적용된 PR 초안이 터미널에 출력됩니다.
+   - [python main.py commit 실행]
+     <img width="595" height="225" alt="Image" src="https://github.com/user-attachments/assets/d09d2bc7-7370-4f3c-a820-dbd151e2564c" />
 
-2. **API Key 미설정 상황 예외 처리**
+   -[python main.py pr 실행] 
+   <img width="774" height="377" alt="Image" src="https://github.com/user-attachments/assets/5a335cf7-3da5-4336-b4a1-99f92cb20d76" />
+
+3. **API Key 미설정 상황 예외 처리**
    - `AI_API_KEY` 환경변수가 설정되지 않은 상태에서 실행할 경우, `[ERROR] AI_API_KEY 환경변수가 설정되지 않았습니다.`라는 명확한 에러 메시지와 설정 가이드를 출력한 후 안전하게 프로그램을 종료(`sys.exit(1)`)합니다.
+   - 
+<img width="466" height="122" alt="Image" src="https://github.com/user-attachments/assets/795c9c2a-cd60-4330-bd69-e00ee236a21a" />
 
-3. **Git 변경 사항이 없는 경우 처리**
+4. **Git 변경 사항이 없는 경우 처리**
    - `git status` 및 `git diff` 결과가 비어있는 경우 `[INFO] 변경 사항이 없습니다. 커밋/PR 메시지를 생성하지 않고 종료합니다.` 메시지를 출력하고 API 호출 없이 즉시 종료됩니다.
+   - 
+<img width="509" height="74" alt="Image" src="https://github.com/user-attachments/assets/a18dee7f-24c4-4f57-be87-d4e8c9fd1bae" />
 
-4. **PR 본문 필수 구조 및 불릿 준수**
+
+5. **PR 본문 필수 구조 및 불릿 준수**
    - 생성된 PR 본문에는 `## Why`, `## What`, `## How to Test` 3개 섹션 헤더가 반드시 포함되며, 각 섹션 아래에는 최소 1개 이상의 불릿(`-`) 형태 설명이 생성됩니다.
 
-5. **`--temperature` 및 `--max-tokens` 옵션 변경 실험 결과**
+6. **`--temperature` 및 `--max-tokens` 옵션 변경 실험 결과**
    - `--temperature 0.1`: 매우 단정적이고 일관된 어조로 핵심만 요약함.
    - `--temperature 0.8`: 표현이 다채로워지지만 불필요한 수식어가 늘어남.
    - `--max-tokens 100`: 길어진 diff 요약 도중 문장이 중간에 잘리는 현상이 발생함. (기본값 500 토큰 추천)
 
-6. **길이 및 형식 규칙 만족**
+7. **길이 및 형식 규칙 만족**
    - 커밋 제목은 최대 72자(50자 권장)로 자동 잘림/제한 처리됩니다.
    - PR 제목은 80자 이내로 제한되며, 구획선(`---`)을 통해 결과물을 한눈에 알아볼 수 있도록 시각적으로 구분했습니다.
 
@@ -164,16 +174,3 @@ python main.py commit --max-tokens 30
 # 2) Max Tokens = 500 (기본값: 충분한 길이 제공)
 python main.py commit --max-tokens 500
 
-
-1.
-<img width="466" height="122" alt="Image" src="https://github.com/user-attachments/assets/795c9c2a-cd60-4330-bd69-e00ee236a21a" />
-
-
-2.
-<img width="595" height="225" alt="Image" src="https://github.com/user-attachments/assets/d09d2bc7-7370-4f3c-a820-dbd151e2564c" />
-
-2.
-<img width="774" height="377" alt="Image" src="https://github.com/user-attachments/assets/5a335cf7-3da5-4336-b4a1-99f92cb20d76" />
-
-3.
-<img width="509" height="74" alt="Image" src="https://github.com/user-attachments/assets/a18dee7f-24c4-4f57-be87-d4e8c9fd1bae" />
