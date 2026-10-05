@@ -163,3 +163,17 @@ python main.py commit --max-tokens 30
 
 # 2) Max Tokens = 500 (기본값: 충분한 길이 제공)
 python main.py commit --max-tokens 500
+
+
+1.
+<img width="466" height="122" alt="Image" src="https://github.com/user-attachments/assets/795c9c2a-cd60-4330-bd69-e00ee236a21a" />
+
+
+2.
+<img width="595" height="225" alt="Image" src="https://github.com/user-attachments/assets/d09d2bc7-7370-4f3c-a820-dbd151e2564c" />
+
+2.
+<img width="774" height="377" alt="Image" src="https://github.com/user-attachments/assets/5a335cf7-3da5-4336-b4a1-99f92cb20d76" />
+
+3.
+<img width="509" height="74" alt="Image" src="https://github.com/user-attachments/assets/a18dee7f-24c4-4f57-be87-d4e8c9fd1bae" />
