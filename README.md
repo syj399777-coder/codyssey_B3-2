@@ -58,10 +58,10 @@ Git 변경 사항(`git status`, `git diff`)을 분석하여 컨벤션에 맞는 
    - `ppython main.py commit` 실행, 변경 사항 요약 기반의 커밋 메시지(제목 1줄 + 불릿 본문)가 터미널에 명확한 구획선과 함께 출력됩니다.
    - `python main.py pr` 실행 시, PR 제목 1줄과 `Why/What/How to Test` 템플릿이 적용된 PR 초안이 터미널에 출력됩니다.
    - [python main.py commit 실행]
-     <img width="595" height="225" alt="Image" src="https://github.com/user-attachments/assets/d09d2bc7-7370-4f3c-a820-dbd151e2564c" />
+   - <img width="595" height="225" alt="Image" src="https://github.com/user-attachments/assets/d09d2bc7-7370-4f3c-a820-dbd151e2564c" />
 
    -[python main.py pr 실행] 
-   <img width="774" height="377" alt="Image" src="https://github.com/user-attachments/assets/5a335cf7-3da5-4336-b4a1-99f92cb20d76" />
+   - <img width="774" height="377" alt="Image" src="https://github.com/user-attachments/assets/5a335cf7-3da5-4336-b4a1-99f92cb20d76" />
 
 3. **API Key 미설정 상황 예외 처리**
    - `AI_API_KEY` 환경변수가 설정되지 않은 상태에서 실행할 경우, `[ERROR] AI_API_KEY 환경변수가 설정되지 않았습니다.`라는 명확한 에러 메시지와 설정 가이드를 출력한 후 안전하게 프로그램을 종료(`sys.exit(1)`)합니다.
