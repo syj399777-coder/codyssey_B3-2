@@ -139,3 +139,27 @@ Git 변경 사항(`git status`, `git diff`)을 분석하여 컨벤션에 맞는 
 3. **팀 프로젝트 적용 시 최우선 개선/추가 기능 (우선순위 근거)**
    - **1순위 기능**: **팀 커밋/PR 컨벤션 파일(`.ai-gitgen.yml`) 연동 기능**
    - **우선순위 근거**: 팀마다 사용하는 커밋 모듈 태그(예: `feat`, `fix`, `chore` 등)나 PR 템플릿 항목이 다릅니다. 각 팀의 저장소 루트에 컨벤션 파일을 두고 이를 읽어와 프롬프트에 자동 반영되도록 개선한다면, 팀 전원이 동일한 규칙의 커밋/PR 문서를 자동으로 유지할 수 있어 실제 팀 협업에 가장 파급력이 큽니다.
+
+
+---
+    [requests의 역할]
+   requests가 없으면 파이썬 프로그램이 외부 인터넷(구글 API 서버)과 통신을 하지 못합니다.
+
+---
+[--temperature` 및 `--max-tokens` 옵션 변경]
+
+1. --temperature (창의성 / 일관성) 실험
+
+# 1) Temperature = 0.0 (최대한 단정하고 정형화된 표현)
+python main.py commit --temperature 0.0
+
+# 2) Temperature = 0.9 (다채롭고 자유로운 표현)
+python main.py commit --temperature 0.9
+
+2. --max-tokens (최대 답변 길이 제한) 실험
+
+# 1) Max Tokens = 30 (극도로 짧게 제한)
+python main.py commit --max-tokens 30
+
+# 2) Max Tokens = 500 (기본값: 충분한 길이 제공)
+python main.py commit --max-tokens 500
